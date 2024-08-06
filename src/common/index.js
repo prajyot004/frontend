@@ -1,4 +1,4 @@
-const backendDomain = 'https://art-gallary-backend-neon.vercel.app'
+const backendDomain = 'http://localhost:8080';
 
 
 const SummaryApi = {

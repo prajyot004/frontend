@@ -6,8 +6,7 @@ import { FaEyeSlash } from "react-icons/fa6";
 import SummaryApi from '../common';
 import { toast } from 'react-toastify';
 import Context from '../context';
-
-
+import Cookies from 'universal-cookie';
 const Login = () => {
   const [showPassword , setShowPassword] = useState(false);
   const [data, setData] = useState({
@@ -43,6 +42,9 @@ const Login = () => {
 
     if(dataApi.success){
       toast.success(dataApi.message)
+      const cookies = new Cookies();
+      cookies.set('myCat', 'Pacman', { path: '/' });
+      console.log(cookies.get('myCat'));
       navigate('/')
       fetchUserDetails()
       fetchUserAddToCart()
