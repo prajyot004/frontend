@@ -16,6 +16,10 @@ const Login = () => {
   const navigate = useNavigate()
   const {fetchUserDetails, fetchUserAddToCart} = useContext(Context)
 
+  const cookies = new Cookies();
+      cookies.set('myCat', 'Pacman', { path: '/' });
+      console.log(cookies.get('myCat'));
+
   const handleOnChange = (e) =>{
     const {name, value} = e.target
     setData((preve)=>{
@@ -42,9 +46,7 @@ const Login = () => {
 
     if(dataApi.success){
       toast.success(dataApi.message)
-      const cookies = new Cookies();
-      cookies.set('myCat', 'Pacman', { path: '/' });
-      console.log(cookies.get('myCat'));
+      
       navigate('/')
       fetchUserDetails()
       fetchUserAddToCart()
