@@ -1,5 +1,7 @@
-const backendDomain = process.env.BACKEND_DOMAIN;
+// const backendDomain = 'https://art-gallary-backend-neon.vercel.app';
+const backendDomain = process.env.REACT_APP_BACKEND_URL;
 // const backendDomain = 'http://localhost:8080';
+console.log(process.env.REACT_APP_BACKEND_URL)
 
 const SummaryApi = {
   signUp: {
